@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.example.jetpackdemo.screen.HomeFrag"
+        android:label="HomeFragment" />
+
+    <fragment
+        android:id="@+id/user_profile_frag"
+        android:name="com.example.jetpackdemo.screen.UserInfoFrag"
+        android:label="UserInfoFrag">
+
+    </fragment>
+
+</navigation>
