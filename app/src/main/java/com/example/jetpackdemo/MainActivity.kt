@@ -86,10 +86,12 @@ fun BottomNavigation(viewModel: BottomScreenViewModel) {
         BottomNavItem.Home,
         BottomNavItem.MyNetwork,
         BottomNavItem.AddPost,
-        BottomNavItem.Notification
+        BottomNavItem.Notification,
+        BottomNavItem.Jobs
     )
     val showBottomBar = navController
         .currentBackStackEntryAsState().value?.destination?.route in screens.map { it.screen_route }
+
     Scaffold(
         modifier = Modifier.background(Color.Black),
         bottomBar = { if (showBottomBar) { BottomNavigation(navController = navController) } },

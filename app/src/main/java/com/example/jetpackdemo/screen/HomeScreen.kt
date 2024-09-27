@@ -218,8 +218,9 @@ fun setUpUi(
 
     Card(
         modifier = Modifier
-            .height(120.dp)
-            .fillMaxWidth().padding(10.dp).clickable {
+            .height(100.dp)
+            .padding(top = 10.dp, start = 15.dp, end = 15.dp)
+            .fillMaxWidth().padding(top=10.dp).clickable {
                 isClicked.value = true
                 if (!multiplePermissionsState.allPermissionsGranted)
                     multiplePermissionsState.launchMultiplePermissionRequest()
@@ -227,14 +228,14 @@ fun setUpUi(
                     showToast(context, "Already Granted")
 
               //  navController.navigate("DetailScreen")
-                navController.navigate(BottomNavItem.Detail.screen_route)
+                navController.navigate("LoginScreen")
 
                 Log.d("navController111", navController.currentDestination?.id.toString())
                 //findNavController().safelyNavigate(R.id.user_profile_frag)
 //                navigateWithAnimationWithPopUpto(navController, R.id.user_profile_frag)
 
             },
-        shape = RoundedCornerShape(18.dp),
+        shape = RoundedCornerShape(10.dp),
         elevation = 10.dp
     ) {
         
@@ -247,10 +248,11 @@ fun setUpUi(
             val (tvTitle, ivBanner) = createRefs()
 
             Text(
-                textAlign = TextAlign.Center,
+                textAlign = TextAlign.Start,
                 text = title.uppercase(),
                 fontSize = 20.sp,
                 color = Color.Red,
+                maxLines = 1,
                 modifier = Modifier
                     .padding(1.dp)
                     .constrainAs(tvTitle) {
@@ -259,10 +261,10 @@ fun setUpUi(
                         end.linkTo(parent.end)
                         bottom.linkTo(parent.bottom)
                         width = Dimension.fillToConstraints
-                    }
+                    }.padding(start = 20.dp)
             )
 
-            Image(painter = painterResource(id = android.R.drawable.ic_menu_call),
+            Image(painter = painterResource(id = R.drawable.ic_home),
                 contentDescription = "image",
                 modifier = Modifier
                     .constrainAs(ivBanner) {
@@ -270,7 +272,7 @@ fun setUpUi(
                         end.linkTo(tvTitle.start)
                         top.linkTo(parent.top)
                         bottom.linkTo(parent.bottom)
-                    }.width(50.dp)
+                    }.width(50.dp).padding(start = 20.dp)
             )
         }
     }

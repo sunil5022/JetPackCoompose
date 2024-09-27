@@ -10,4 +10,5 @@ sealed class BottomNavItem(var title:String, var icon:Int, var screen_route:Stri
     object Notification: BottomNavItem("Notification",android.R.drawable.ic_search_category_default,"notification")
     object Jobs: BottomNavItem("Jobs", android.R.drawable.ic_menu_add,"jobs")
     object Detail: BottomNavItem("DetailScreen", android.R.drawable.ic_menu_add,"DetailScreen")
+   // object LoginScreen: BottomNavItem("LoginScreen", android.R.drawable.ic_menu_add,"LoginScreen")
 }

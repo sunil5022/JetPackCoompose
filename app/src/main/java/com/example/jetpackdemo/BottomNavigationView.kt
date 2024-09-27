@@ -19,6 +19,7 @@ import com.example.jetpackdemo.screen.AddPostScreen
 import com.example.jetpackdemo.screen.DetailScreen
 import com.example.jetpackdemo.screen.HomeScreen
 import com.example.jetpackdemo.screen.JobScreen
+import com.example.jetpackdemo.screen.LoginScreen
 import com.example.jetpackdemo.screen.NetworkScreen
 import com.example.jetpackdemo.screen.NotificationScreen
 import com.example.jetpackdemo.viewModel.BottomScreenViewModel
@@ -45,6 +46,9 @@ fun NavigationGraph(navController: NavHostController,viewModel: BottomScreenView
         }
         composable(BottomNavItem.Detail.screen_route) {
             DetailScreen(navController)
+        }
+        composable("LoginScreen") {
+            LoginScreen()
         }
     }
    }
